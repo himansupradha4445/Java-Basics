@@ -124,6 +124,69 @@ map.put("Wipro", "$21.5 billion");
 map.forEach((k,v) -> System.out.println("Company: "+ k + ", Net worth: " + v));
 ```
 
+# MULTI-THREADING:
+- “Multithreading is a programming concept where multiple threads run concurrently within a single process. Each thread performs a separate task, but all threads share the same memory space. It improves performance and resource utilization and is commonly used when we need to perform multiple operations in parallel, like handling multiple client requests or background tasks.”
+  
+** *Multithreading * means multiple threads share the same process and memory space to perform different tasks concurrently within a single application, which makes it lightweight and faster for I/O-bound tasks.
+
+*Multiprocessing* means running multiple processes simultaneously, where each process has its own memory and resources, and it’s mainly used to achieve true parallelism for CPU-bound tasks.” **
+
+```java
+class NumberPrinter implements Runnable {
+    private String threadName;
+
+    public NumberPrinter(String threadName) {
+        this.threadName = threadName;
+    }
+
+    @Override
+    public void run() {
+        for (int i = 1; i <= 5; i++) {
+            System.out.println(threadName + " : " + i);
+            try {
+                Thread.sleep(500);  // pause the thread for 500ms
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+}
+
+public class MultithreadingExample {
+    public static void main(String[] args) {
+        // Create two Runnable objects
+        Runnable p1 = new NumberPrinter("Thread-1");
+        Runnable p2 = new NumberPrinter("Thread-2");
+
+        // Create thread objects
+        Thread t1 = new Thread(p1);
+        Thread t2 = new Thread(p2);
+
+        // Start both threads
+        t1.start();
+        t2.start();
+    }
+}
+```
+
+## Thread Life Cycle :
+A thread goes through five main states in its lifecycle:
+- New (created but not started),- this is when the thread object is created but the start() method hasn’t been called yet.
+- Runnable (ready and waiting for CPU),- once start() is called, the thread becomes runnable. It is ready to run and waiting for CPU time.
+- Running (currently executing),- the thread gets CPU and actually starts executing the code inside the run() method.
+- Blocked/Waiting (not running, waiting for a monitor or resource) - during execution, a thread might temporarily stop if it’s waiting for a lock, sleeping or waiting for some other thread to complete. This is the blocked (or waiting) state
+- Terminated (finished execution) -once the run() method finishes or the thread completes its execution, it enters the terminated or dead state.
+
+
+** *Deadlock* is a situation in multithreading where two or more threads are each waiting for a resource held by the other, and as a result, none of them can proceed. It causes the threads to be stuck permanently. **
+
+
+  
+
+
+
+
+
 
 
     
