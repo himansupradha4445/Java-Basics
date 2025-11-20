@@ -17,6 +17,9 @@
 **Why Use**
 i. For Method Overriding
 ii. For Code reusability
+**REAL TIMA AUTOMATION**
+- Inheritance is used to create a Base class for driver setup, tear-down, logs, and waits.
+-  All test classes extend this Base class to reuse common functionality.
 
 ### Polymorphism :
 - When a method show different behaviour at different time.
@@ -25,6 +28,26 @@ ii. For Code reusability
 #### ii.MethodOverriding:
 - If a subclass has same method as declared in the parent class.
 
+**REAL TIMA AUTOMATION**
+- Polymorphism allows us to overload utility methods and override behaviours.
+- For example, different driver classes override WebDriver methods, and our framework utilities overload common actions.
+
+### Encapsulation:
+	- It is a process of wrapping code and data together into a single unit.
+	- Achieved using private variables + public getters/setters
+	- It protects sensitive data from being access directly.
+	- Improves maintainability.
+
+**REAL TIMA AUTOMATION**	
+- We use encapsulation in Page Object Model. All web elements are kept private and exposed through public action methods.
+- This protects objects from direct access and increases maintainability.
+
+### Abstraction:
+-  is a process of hiding the implementation details and showing only functionality to the user.
+#### Abstract Class :
+- It cannot be instantiated.
+- It can have constructors and static methods also.
+- It can have final methods, which will force the subclass not to change the body of the method.
 
 ## 2. DIFFERENT WAY OF CONCATENATING :
   - Using "+" (String concatenation) Operator
