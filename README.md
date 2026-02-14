@@ -203,6 +203,36 @@ A thread goes through five main states in its lifecycle:
 
 ** *Deadlock* is a situation in multithreading where two or more threads are each waiting for a resource held by the other, and as a result, none of them can proceed. It causes the threads to be stuck permanently. **
 
+## Exception : 
+an exception is an event that occurs during the execution of a program and disrupts the normal flow of instructions.
+Exceptions can occur for various reasons, such as invalid user input, a file not being found, or division by zero. 
+## Exception Handeling :
+It is a mechanism that allows a program to handle runtime errors such as ClassNotFoundException, IOException, SQLException, RemoteException, 
+### Throwable :
+Throwable is the parent class of all errors and exceptions in Java.
+- Error
+
+Error represents serious system-level problems.
+
+Caused by JVM
+
+Not meant to be handled by programmers
+
+Usually unrecoverable
+
+Examples:
+
+OutOfMemoryError
+
+StackOverflowError
+
+VirtualMachineError
+
+Example:
+
+int[] arr = new int[999999999]; //
+
+
 
   
 
