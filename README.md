@@ -208,29 +208,77 @@ an exception is an event that occurs during the execution of a program and disru
 Exceptions can occur for various reasons, such as invalid user input, a file not being found, or division by zero. 
 ## Exception Handeling :
 It is a mechanism that allows a program to handle runtime errors such as ClassNotFoundException, IOException, SQLException, RemoteException, 
-### Throwable :
+## Throwable :
 Throwable is the parent class of all errors and exceptions in Java.
-- Error
-
-Error represents serious system-level problems.
-
-Caused by JVM
-
-Not meant to be handled by programmers
-
-Usually unrecoverable
+### Error :
+An Error is a serious problem that usually happens because of the system/JVM, not because of your code logic.
 
 Examples:
+OutOfMemoryError → memory full
+StackOverflowError → infinite recursion
+NoClassDefFoundError → class missing at runtime
+VirtualMachineError → JVM crash type issue
+InternalError
+AssertionError
+UnsatisfiedLinkError → native library issue
 
-OutOfMemoryError
+### Checked Exception :
+- Checked exceptions are the exceptions that are checked at compile-time.
+- It can be handled by try catch or throws keyword.
+Examples :
+File / IO-
+IOException
+FileNotFoundException
+EOFException
 
-StackOverflowError
+Database :
+SQLException
 
-VirtualMachineError
+Class loading :
+ClassNotFoundException 
 
-Example:
+Threading:
+InterruptedException 
 
-int[] arr = new int[999999999]; //
+Networking :
+MalformedURLExceptio
+UnknownHostException
+SocketException
+
+Reflection:
+NoSuchMethodException
+IllegalAccessException
+InvocationTargetException
+
+### Unchecked Exception :
+- Unchecked exceptions, also known as runtime exceptions, are not checked at compile-time.
+- It occur due to programming errors, such as logic errors etc.
+
+Examples :
+
+Math :
+ArithmeticException → divide by zero
+
+Null :
+NullPointerException
+
+Array/String index:
+ArrayIndexOutOfBoundsException
+StringIndexOutOfBoundsException
+
+Wrong type casting:
+ClassCastException
+
+Wrong input :
+NumberFormatException
+
+Illegal arguments/state :
+IllegalArgumentException
+IllegalStateException
+
+Collections:
+ConcurrentModificationException
+NoSuchElementException
 
 
 
